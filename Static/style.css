@@ -1,3 +1,6 @@
+#icon_logo{
+    object-fit: cover;
+}
 #logo_div{
     background-color: antiquewhite;
     /* border-radius: 10%; */
@@ -6,6 +9,7 @@
     max-width: 250px;
     height: auto;
     padding: 10px 10px;
+    
 }
 .content_wrapper{
     display: flex;
@@ -71,4 +75,9 @@
     color: rgb(161, 160, 160);
     box-shadow: 0 0 10px 2px rgb(161, 160, 160);
     cursor: not-allowed;
+}
+
+/*Change button color to match front page's buttons*/
+button:hover{
+    box-shadow: 0 0 10px 2px rgb(161, 160, 160);
 }
