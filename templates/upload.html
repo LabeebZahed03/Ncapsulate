@@ -4,34 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nCapsulate - Upload</title>
-    <link rel="icon" type="image/x-icon" size="16x16" href="../Icons/logo.png">
-    <!-- Bootstrap CSS for styling -->
+    <link rel="icon" type="image/x-icon" size="16x16" href="static/Icons/logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
     <div id="logo_div">
-        <img src="{{ url_for('static', filename='Icons/logo.png') }}" alt="nCapsulate logo" class="logo">
+        <img class="logo" alt="nCapsulate logo" src="static/Icons/logo.png">
     </div>
 
     <div class="container my-5">
-        <div class="content_wrapper">
-            <div id="upload-section" class="container_box">
-                <p class="welcome_text">File Upload:</p>
-                <form id="upload-form" enctype="multipart/form-data" method="POST" action="/upload">
-                    <div class="mb-3">
-                        <input type="file" class="form-control" id="file-input" name="file" accept=".mp4, .mp3" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">nCapsulate!</button>
-                </form>
+        <div id="upload-form-section">
+            <div class="content_wrapper">
+                <div id="upload-section" class="container_box">
+                    <p class="welcome_text">Please upload your file for summarization:</p>
+                    <form id="upload-form" enctype="multipart/form-data" method="POST" action="/upload">
+                        <div class="mb-3">
+                            <input type="file" class="form-control" id="file-input" name="file" accept=".mp4, .mp3" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Upload and Summarize</button>
+                    </form>
+                </div>
             </div>
+        </div>
+
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="content_wrapper" style="display:none;">
+            <div class="container_box">
+                <p class="welcome_text">Processing your file, please wait...</p>
+                <div class="spinner-border text-primary" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Section -->
+        <div id="summary-section" class="content_wrapper" style="display:none;">
+            <!-- Summary will be injected here -->
         </div>
     </div>
 
-    <!-- Include Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <!-- Include your custom JS -->
-    <script src="../Static/script.js"></script>
+    <script src="/static/script.js"></script>
 </body>
 </html>
